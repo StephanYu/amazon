@@ -1,1 +1,13 @@
-<h1>Look at app/views/items/home.html.erb</h1>
+
+<div ng-controller="ItemsController">
+  <div ng-repeat="item in items" ng-show="allItems">
+    <img src="{{item.url}}">
+    <h3>{{item.name}}</h3>
+    <p>{{item.description}}</p>
+    <p>{{item.price | currency}}</p>
+    <p>{{item.quantity}} items remaining</p>
+    <button class="add-cart-btn">Add to Cart</button>
+  </div>
+</div>
+
+

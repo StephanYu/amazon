@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :orders
+  resources :posts, defaults: {format: :json}
 
   root 'items#home'
   resources :items
