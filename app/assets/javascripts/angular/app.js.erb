@@ -1,0 +1,31 @@
+var app = angular.module('amazonApp', ['ngResource', 'ngRoute']);
+
+app.config(function($routeProvider) {
+  $routeProvider
+    .when("/", {
+      templateUrl: "<%= asset_path('assets/templates/items.html') %>",
+      controller: "ItemsController"
+    })
+    .when("/checkout", {
+      templateUrl: "<%= asset_path('assets/templates/checkout.html') %>",
+      controller: "CheckoutController"
+    })
+    .when("/purchase", {
+      templateUrl: "<%= asset_path('assets/templates/purchase.html') %>",
+      controller: "CheckoutController"
+    })
+    .otherwise({
+      redirectTo: "/"
+    });
+});
+
+
+
+// app.controller('OrdersController', ['$scope', '$resource',
+//   function($scope, $resource) {
+//     $scope.order =  {};
+//     $scope.order.description; 
+//     var Task = $resource('/orders/:id', {id: '@id'});
+
+//   }
+// ]);

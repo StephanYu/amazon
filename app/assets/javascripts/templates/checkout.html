@@ -1,0 +1,23 @@
+<div class="summary-purchase">
+  <ol>
+    <li ng-repeat="obj in cart">Product: {{obj.item.name}}--Price: {{obj.price | currency}}--Quantity: {{obj.count}}</li>
+  </ol>
+
+  <h4>SubTotal: {{subTotal}}</h4>
+  
+</div>
+<button ng-click="purchase()">Buy Now</button>
+<hr>
+
+<h3>Please review all items before finalizing your purchase:</h3>
+
+<div ng-repeat="obj in cart">
+  <p>{{obj.item.name}}</p>
+  <p>{{obj.item.description}}</p>
+  <p>{{obj.price | currency}}</p>
+  <img src={{obj.item.url}}></img>
+</div>
+
+<hr>
+
+<button ng-click="purchase()">Buy Now</button>
